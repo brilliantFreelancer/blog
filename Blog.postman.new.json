@@ -1,0 +1,694 @@
+{
+	"info": {
+		"_postman_id": "c22ee2e4-c2ae-4601-aaa9-97c5d5859cdf",
+		"name": "Blog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Sign_In",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"bruce@gmail.com\",\n    \"password\": \"asd\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/signIn",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"signIn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign_Up",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"first_name\": \"Michael\",\n    \"last_name\": \"Phelps\",\n    \"location\": {\"lat\":\"102\",\"long\":\"45\"},\n    \"job\": \"athlete\",\n    \"specialization\": \"swimming\",\n    \"about\": \"I am highly organized. I always take notes, and I use a series of tools to help myself stay on top of deadlines. I like to keep a clean workspace and create a logical filing method sdfso I’m always able to find what I need. I find this increases efficiency and helps the rest of the team stay on track, too. In my last role, I created a new filing process that increased departmental efficiency 25%.\",\n    \"email\": \"Michael@gmail.com\",\n    \"password\": \"asd1sdf23\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/signUp",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"signUp"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Blogs",
+			"item": [
+				{
+					"name": "createBlog",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"blogTitle\": \"cinema\",\r\n    \"blogContent\": \"Contrary to what many people believe (particularly in India), Cinema as I see it is not only a means of entertainment or passing your time. Its an art equivalent to painting, composing, writing or singing. It is also a way of expressing new ideas and thoughts similar to all other famous mediums of art in a more impactful manner.\",\r\n    \"blogSubscribed\":\"cinema\",\r\n    \"blogTags\":{\"firsTag\":\"cinema\",\"secondTag\":\"actor\",\"thirdTag\":\"films\"}\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/createBlog/5d78fca484ed87283c73cec5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"createBlog",
+								"5d78fca484ed87283c73cec5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListBlogs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/listBlogs",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"listBlogs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBlogforUser",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:3000/getBlogForUser/5d78d18fee153c3754e1b3ba",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"getBlogForUser",
+								"5d78d18fee153c3754e1b3ba"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editBlog",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"blogTitle\": \"newwwwwww\",\r\n    \"blogContent\": \"This is a big problem in modern fgdfgdgdgdfg d\",\r\n    \"blogSummery\":\"i want to write summry but... d!\",\r\n    \"blogSubscribed\":\"Modern Life dddd\",\r\n    \"blogTags\":{\r\n    \t\"firsTag\":\"Bitcoin\",\r\n    \t\"secondTag\":\"Aion\",\r\n    \t\"thirdTag\":\"Libra\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/updateBlog/5d7493cf5cf3783304dc0cd6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"updateBlog",
+								"5d7493cf5cf3783304dc0cd6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteBlog",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:3000/deleteBlog/5d6f6dff2ae27e0090d2e02d",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"deleteBlog",
+								"5d6f6dff2ae27e0090d2e02d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upVote",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"voteAuthor\":\"5d73325f65cef82f7406cca2\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/upVote_Post/5d7332ea65cef82f7406cca4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"upVote_Post",
+								"5d7332ea65cef82f7406cca4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "downVote",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"voteAuthor\":\"5d6fa67553b0201ca09b1206\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/downVote_Post/5d6f63274b2aa048507ce987",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"downVote_Post",
+								"5d6f63274b2aa048507ce987"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBlogInCategory",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/getBlogForCategory/Life style",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"getBlogForCategory",
+								"Life style"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOneBlogForUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/getOneBlogForUser/5d78f085e36f013610e27bf0",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"getOneBlogForUser",
+								"5d78f085e36f013610e27bf0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "Comments",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\t\"commentContent\":\"not bad !\",\n        \"commentPost_id\":\"5d78fd9c84ed87283c73cec7\",\n        \"commentComment_id\":null\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/createComments/5d78fca484ed87283c73cec5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"createComments",
+								"5d78fca484ed87283c73cec5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Comments Reply",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\t\"commentContent\":\"i am writing a comment\",\n        \"commentPost_id\":\"5d6f63274b2aa048507ce987\",\n        \"commentComment_id\":\"5d70972261d11a139446874d\"\n       \n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/createComments/5d6fbaaaf699a736c8a20737",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"createComments",
+								"5d6fbaaaf699a736c8a20737"
+							]
+						},
+						"description": " every thing is the same of Comments but body. it's just for clearity"
+					},
+					"response": []
+				},
+				{
+					"name": "up_vote",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"voteAuthor\":\"5d73325f65cef82f7406cca2\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/upVote_comment/5d733dbaa07b30152c6e25d4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"upVote_comment",
+								"5d733dbaa07b30152c6e25d4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "down_vote",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"voteAuthor\":\"5d73321e65cef82f7406cca0\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/downVote_comment/5d733dbaa07b30152c6e25d4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"downVote_comment",
+								"5d733dbaa07b30152c6e25d4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authors",
+			"item": [
+				{
+					"name": "up_vote",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"voteAuthor\":\"5d73326c65cef82f7406cca3\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/upVote_author/5d73325f65cef82f7406cca2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"upVote_author",
+								"5d73325f65cef82f7406cca2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "down_vote",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"voteAuthor\":\"5d7336e393cba91ce03fea4d\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/downVote_author/5d73325f65cef82f7406cca2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"downVote_author",
+								"5d73325f65cef82f7406cca2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listAuthors",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:3000/listAuthors",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"listAuthors"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "0276bfcd-bbaf-4434-9f1a-6ac45f2cb965",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "d149d138-114d-4135-9f8c-5d53783a7ebc",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
